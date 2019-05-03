@@ -1,3 +1,33 @@
-<p>
-  contact-list works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Liste des contacts
+  </div>
+  <div class="panel-body">
+    <table class="table-responsive">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let contact of contacts'>
+          <td>{{contact.id}}</td>
+          <td>{{contact.nom}}</td>
+          <td>{{contact.prenom}}</td>
+          <td>
+              <a class="clickable" (click)='detailContact(contact.id)'>Detail</a>
+          </td>
+          <td>
+              <a class="clickable" (click)='deleteContact(contact.id)'>Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
